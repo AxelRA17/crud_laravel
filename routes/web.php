@@ -1,5 +1,6 @@
 <?php
 use App\Http\Controllers\CatalogoController;
+use App\Http\Controllers\UsuarioController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -23,3 +24,8 @@ Route::get('/editar/{id}',[CatalogoController::class,'editar'])->name("editar");
 Route::put('/edicion/{pelicula}',[CatalogoController::class,'actualizar'])->name("actualizar");
 Route::post('/insertar',[CatalogoController::class,'insertar_pelicula'])->name("insercion");
 Route::get('/eliminar/{id}',[CatalogoController::class,'eliminar_pelicula'])->name("eliminar");
+
+Route::get('/register',[UsuarioController::class,'register'])->name("register");
+Route::post('/insertar_usuario',[UsuarioController::class,'insertar_usuario'])->name("insercion_usuario");
+Route::get('/login',[UsuarioController::class,'login'])->name("login");
+Route::post('/login_usuario',[UsuarioController::class,'login_usuario'])->name("login_usuario");
