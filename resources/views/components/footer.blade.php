@@ -1,6 +1,6 @@
 <footer class="bg-dark text-white mt-5 pt-4 pb-2">
     <div class="container text-center">
-        <p class="mb-1">&copy; <span id="year"></span> Axel Ronquillo. Todos los derechos reservados 😎</p>
+        <p class="mb-1">&copy; <span id="year"></span> Axel Ronquillo y Chat. Todos los derechos reservados 😎</p>
         <div class="d-flex justify-content-center gap-3 mt-2">
             <a href="#" class="text-white text-decoration-none">Inicio</a>
             <a href="#" class="text-white text-decoration-none">Películas</a>

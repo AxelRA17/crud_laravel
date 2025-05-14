@@ -23,6 +23,10 @@ class LoginController extends Controller
         $credentials = $request->validate([
             'email'    => 'required|email',
             'password' => 'required|string',
+        ], [
+            'email.required' => 'El correo electrónico es obligatorio.',
+            'email.email' => 'El correo electrónico debe tener un formato válido.',
+            'password.required' => 'La contraseña es obligatoria.',
         ]);
 
         if (Auth::attempt($credentials, $request->remember)) {
@@ -31,9 +35,10 @@ class LoginController extends Controller
         }
 
         return back()->withErrors([
-            'email' => 'Credenciales incorrectas.',
-        ])->onlyInput('email');
+            'login_error' => 'Correo electrónico o contraseña incorrectos.',
+        ])->withInput();
     }
+
 
     public function logout(Request $request)
     {

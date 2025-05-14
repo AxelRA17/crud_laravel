@@ -25,7 +25,22 @@ class RegisterController extends Controller
         $request->validate([
             'name' => 'required|string|max:255',
             'email' => 'required|email|unique:users,email',
-            'password' => 'required|string|min:6|confirmed',
+            'password' => [
+                'required',
+                'string',
+                'min:8',
+                'confirmed',
+                'regex:/^(?=.*[A-Z])(?=.*[\W_]).+$/'
+            ],
+        ], [
+            'name.required' => 'El nombre es obligatorio.',
+            'email.required' => 'El correo electrónico es obligatorio.',
+            'email.email' => 'El correo debe tener un formato válido.',
+            'email.unique' => 'El correo ya está registrado.',
+            'password.required' => 'La contraseña es obligatoria.',
+            'password.min' => 'La contraseña debe tener al menos 8 caracteres.',
+            'password.confirmed' => 'Las contraseñas no coinciden.',
+            'password.regex' => 'La contraseña debe tener al menos una letra mayúscula y un símbolo especial.',
         ]);
 
         $user = User::create([
@@ -34,8 +49,8 @@ class RegisterController extends Controller
             'password' => Hash::make($request->password),
         ]);
 
-        Auth::login($user); // Iniciar sesión automáticamente
+        /* Auth::login($user); */
 
-        return redirect()->route('inicio')->with('success', '¡Registro exitoso!');
+        return redirect()->route('login')->with('success', '¡Registro exitoso!');
     }
 }

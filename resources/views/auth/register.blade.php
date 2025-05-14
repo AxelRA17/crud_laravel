@@ -22,22 +22,22 @@
 
                     <div class="mb-3">
                         <label for="name" class="form-label">Nombre completo</label>
-                        <input type="text" name="name" class="form-control" required value="{{ old('name') }}">
+                        <input type="text" name="name" class="form-control" value="{{ old('name') }}">
                     </div>
 
                     <div class="mb-3">
                         <label for="email" class="form-label">Correo electrónico</label>
-                        <input type="email" name="email" class="form-control" required value="{{ old('email') }}">
+                        <input type="email" name="email" class="form-control" value="{{ old('email') }}">
                     </div>
 
                     <div class="mb-3">
                         <label for="password" class="form-label">Contraseña</label>
-                        <input type="password" name="password" class="form-control" required>
+                        <input type="password" name="password" class="form-control">
                     </div>
 
                     <div class="mb-3">
                         <label for="password_confirmation" class="form-label">Confirmar contraseña</label>
-                        <input type="password" name="password_confirmation" class="form-control" required>
+                        <input type="password" name="password_confirmation" class="form-control">
                     </div>
 
                     <button type="submit" class="btn btn-success w-100">Registrarse</button>
