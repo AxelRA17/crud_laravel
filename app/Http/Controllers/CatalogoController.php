@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 use App\Models\Catalogo;
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
+use Carbon\Carbon;
 
 class CatalogoController extends Controller
 {

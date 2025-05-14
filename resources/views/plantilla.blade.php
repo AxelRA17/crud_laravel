@@ -9,22 +9,16 @@
     <title>{{$titulo}}</title>
 </head>
 
-<body>
+<body class="d-flex flex-column min-vh-100">
+    @include('components/navbar')
 
-  <!--   <header class="text-center py-4">
-        <h1 class="minecraft-title">Peliculas</h1>
-    </header>
- -->
-    <section class="v-100">
-        @include('components/navbar')
-        <div class="container mt-4">
-            @yield('contenido')
-        </div>
-        @include('components/footer')
-    </section>
+    <main class="flex-fill container mt-4">
+        @yield('contenido')
+    </main>
 
+    @include('components/footer')
 
     <script src="{{ asset('js/app.js') }}"></script>
-
 </body>
+
 </html>
